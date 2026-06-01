@@ -29,18 +29,19 @@
 
 ### 全景版
 
-1. 先跑日期限定的本地搜索：`Silicon Valley tech today`、`Bay Area startup funding`、`San Francisco AI startup`、`Palo Alto startup`、`Mountain View AI`、`Menlo Park VC`。
-2. 再按每个板块分别搜索：AI、创业融资、大厂平台、VC/人才、政策安全、创始人经营信号、湾区本地生态。
-3. 检查上面的信源栈，优先找官方公告、一手文件和产品 changelog。
-4. 扫描下面的 X/Twitter 账号，寻找线索、专家反应和争议点。
-5. 每个候选新闻至少用一手来源或可信报道确认。
-6. 按 `source-strategy.md` 的评分标准去重和排序。
+1. 先查今天：`Silicon Valley tech today`、`Bay Area startup funding today`、`San Francisco AI startup today`、`Palo Alto startup today`、`Mountain View AI today`、`Menlo Park VC today`。
+2. 今天高信号不足时再查昨天：`Bay Area startup funding yesterday`、`Silicon Valley acquisition yesterday`、`San Francisco AI startup yesterday`。
+3. 再按每个板块分别搜索：AI、创业融资、大厂平台、VC/人才、政策安全、创始人经营信号、湾区本地生态。
+4. 检查上面的信源栈，优先找今天发布的一手公告、文件、产品 changelog、GitHub release、model card、founder/executive post。
+5. 扫描下面的 X/Twitter 账号，寻找刚出现的线索、专家反应和争议点。
+6. 每个候选新闻至少用一手来源或可信报道确认。
+7. 按 `source-strategy.md` 的评分标准去重和排序；如果混入昨天内容，必须标注「昨日」。
 
 ### 聚焦版
 
-1. 先搜索用户选择的关注方向。
-2. 查该方向最相关的公司、VC、实验室、监管机构或开发者渠道。
-3. 从匹配分类里扫描 8 到 15 个 X/Twitter 账号。
+1. 先搜索用户选择的关注方向，并优先限定 today。
+2. 查该方向最相关的公司、VC、实验室、监管机构或开发者渠道，优先看最新发布。
+3. 从匹配分类里扫描 8 到 15 个 X/Twitter 账号，找刚出现的线索。
 4. 只有当其他板块的事件发生在硅谷/湾区，或核心主体是硅谷/湾区公司、基金、大学、实验室、社区时，才放入「其他重要信号」。
 
 ### 长期订阅

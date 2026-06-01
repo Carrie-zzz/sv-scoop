@@ -13,7 +13,7 @@ Create a reliable daily intelligence brief about Silicon Valley: what happened, 
 
 ## Core Workflow / 核心流程
 
-1. Define the reporting window / 定义报道窗口。If the user says "today", use the user's current date and timezone, then also state the corresponding Pacific Time window because Silicon Valley news often lands on PT.
+1. Define the freshness window / 定义时效窗口。For "today", default to today plus yesterday in the user's timezone and Pacific Time. Prioritize today. Use yesterday only to catch time-zone lag or fill gaps when today's verified local signal is thin.
 2. Select focus first / 先选择关注范围。If the user has not already specified a focus, ask the focus question below and stop. Do not research or draft the brief until the user chooses a focus.
 3. Confirm and proceed / 确认后再执行。After the user chooses, briefly confirm the selected focus and reporting mode, then research. Do not ask for a second confirmation unless the user's choice is ambiguous.
 4. Gather source-backed items / 采集有来源支撑的信息。Use available web/search/browser tools. If live web access is unavailable, state that the brief cannot be verified rather than inventing current events.
@@ -23,6 +23,17 @@ Create a reliable daily intelligence brief about Silicon Valley: what happened, 
 8. Rank items / 排序筛选。Rank by impact, novelty, credibility, Silicon Valley fit, actionability, and the user's selected focus. Include fewer, stronger local items rather than a broad tech news feed.
 9. Draft in the requested language and format / 按用户要求输出。Read `references/report-formats.md` when drafting the final report or adapting it for different audiences.
 10. Cite every factual item / 每个事实都给来源。Use absolute dates, distinguish confirmed facts from rumors, and call out notable gaps in coverage.
+
+## Freshness / 时效规则
+
+This product should feel like "刚发生我们就知道", not a weekly roundup.
+
+- Default window: today + yesterday, mapped to Pacific Time and the user's timezone.
+- Primary target: today. If today has enough verified, high-signal Silicon Valley items, ignore yesterday.
+- Fallback: include yesterday only when today's volume is low, the event broke late in Pacific Time, or the user is reading from a timezone where fresh Silicon Valley news lands overnight.
+- Never include older items unless there is a new fact today, such as a new filing, official confirmation, price, participant, lawsuit update, product release, or funding close.
+- Prefer first-hand sources that just published: company announcement, founder/executive post, SEC/court/regulator filing, product changelog, model card, GitHub release, status page, investor announcement.
+- In output, label items as "今日" or "昨日" when mixing both days, and include the source publish time/date when available.
 
 ## Boundary / 产品边界
 

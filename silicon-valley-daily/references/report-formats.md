@@ -36,6 +36,7 @@ After the user answers, begin with:
 
 报告窗口：YYYY-MM-DD HH:mm 至 YYYY-MM-DD HH:mm（用户时区）；对应 Pacific Time：...
 覆盖范围：发生在硅谷/湾区，或核心主体为硅谷/湾区公司、基金、大学、实验室、社区的事件
+时效策略：优先今日；今日高信号不足时补充昨日，并明确标注
 本次关注范围：全景版
 
 ## 一句话总览
@@ -45,42 +46,44 @@ After the user answers, begin with:
 ## 最值得看的 5 件事
 
 1. **标题**  
+   时间标签：今日 / 昨日
    发生了什么：...
    为什么重要：...
    影响对象：创始人 / 投资人 / 开发者 / 大厂 / 用户
    可信度：高 / 中 / 低
+   发布时间：...
    来源：[Source](URL)
 
 ## 分领域简报
 
 ### AI 模型与基础设施
 
-- **标题**：发生了什么。为什么重要。来源：[Source](URL)
+- **今日｜标题**：发生了什么。为什么重要。发布时间：... 来源：[Source](URL)
 - 今日无高信号：如未发现足够可信的新进展，写明已检查的主要来源类型。
 
 ### 创业、融资与并购
 
-- **标题**：发生了什么。金额、轮次、投资方、收购方等关键事实。来源：[Source](URL)
+- **今日｜标题**：发生了什么。金额、轮次、投资方、收购方等关键事实。发布时间：... 来源：[Source](URL)
 
 ### 大厂、平台与开发者生态
 
-- **标题**：发生了什么。对开发者、客户或竞争格局的影响。来源：[Source](URL)
+- **今日｜标题**：发生了什么。对开发者、客户或竞争格局的影响。发布时间：... 来源：[Source](URL)
 
 ### VC、孵化器与人才流动
 
-- **标题**：基金、合伙人变动、创业者流动、招聘或裁员信号。来源：[Source](URL)
+- **今日｜标题**：基金、合伙人变动、创业者流动、招聘或裁员信号。发布时间：... 来源：[Source](URL)
 
 ### 政策、诉讼与安全
 
-- **标题**：发生了什么。风险或后续节点。来源：[Source](URL)
+- **今日｜标题**：发生了什么。风险或后续节点。发布时间：... 来源：[Source](URL)
 
 ### 创始人和经营信号
 
-- **标题**：定价、GTM、客户采用、岗位变化、开发者反馈等经营信号。来源：[Source](URL)
+- **今日｜标题**：定价、GTM、客户采用、岗位变化、开发者反馈等经营信号。发布时间：... 来源：[Source](URL)
 
 ### 湾区本地生态、大学、活动与社区
 
-- **标题**：Stanford/Berkeley、湾区活动、社区、办公室或本地政策变化。来源：[Source](URL)
+- **今日｜标题**：Stanford/Berkeley、湾区活动、社区、办公室或本地政策变化。发布时间：... 来源：[Source](URL)
 
 ## 接下来值得盯的信号
 
@@ -157,6 +160,7 @@ Use this when the user asks in English or explicitly requests an English output:
 Reporting window: YYYY-MM-DD HH:mm to YYYY-MM-DD HH:mm (user timezone); Pacific Time: ...
 Scope: events that happened in Silicon Valley/Bay Area or directly center on a Silicon Valley/Bay Area company, fund, university, lab, or community.
 Boundary: exclude global tech news unless the central actor or transaction subject is Silicon Valley/Bay Area.
+Freshness: prioritize today; include yesterday only when today's verified signal is thin, and label it.
 Focus: panorama / AI models and infrastructure / startups, funding, and M&A / Big Tech and platforms / VC and talent / policy and security / founder/operator signals / local Bay Area ecosystem
 
 ## Executive Takeaway
@@ -166,17 +170,19 @@ The most important shift today: ...
 ## Top 5 Stories
 
 1. **Headline**
+   Time label: Today / Yesterday
    What happened: ...
    Why it matters: ...
    Who is affected: founders / investors / developers / Big Tech / users
    Confidence: high / medium / low
+   Published: ...
    Source: [Source](URL)
 
 ## By Sector
 
 ### AI and Infrastructure
 
-- **Headline**: What happened. Why it matters. Source: [Source](URL)
+- **Today | Headline**: What happened. Why it matters. Published: ... Source: [Source](URL)
 
 ### Startups, Funding, and M&A
 
@@ -290,4 +296,6 @@ Use this when the user asks what matters for builders, founders, operators, or i
 - If the user selects panorama, include all category sections even when some sections only say "今日无高信号".
 - Apply the Silicon Valley boundary before ranking. Do not include global tech news just because it is related to AI, VC, startups, or Big Tech.
 - For funding and M&A, include only when the target company, buyer, seller, fund, partner, or core operating base is Silicon Valley/Bay Area.
+- Prioritize today's items. Use yesterday only when today's verified volume is thin or a Pacific Time late-breaking item surfaced overnight for the user.
+- When today and yesterday are mixed, label every item "今日" or "昨日" and include publish time/date when available.
 - If the day is quiet, say so and explain which sources were checked.

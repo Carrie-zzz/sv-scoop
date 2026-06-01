@@ -27,6 +27,7 @@ For platforms that import one skill folder at a time, install or upload `silicon
 - Starts with a focus-selection interaction unless the user already specified a focus.
 - Produces sourced daily briefs about Silicon Valley and local Bay Area tech actors.
 - Excludes global tech news unless a Silicon Valley/Bay Area actor is the central subject.
+- Prioritizes the freshest information: today first, yesterday only when today's verified signal is thin.
 - Supports Chinese, English, and bilingual output.
 - Supports panorama briefs and focused briefs.
 - Separates confirmed facts, lower-confidence signals, and excluded noise.
@@ -102,6 +103,7 @@ A panorama brief is not a mixed news feed. It should be sectioned:
 # What Happened in Silicon Valley Today
 
 Reporting window: ...
+Freshness: today first; yesterday only as clearly labeled fill-in
 Focus: Panorama
 
 ## Executive Takeaway
@@ -192,6 +194,7 @@ Silicon Valley Daily 是一个可跨平台安装的 agent skill package，用来
 - 如果用户没有提前指定关注范围，先发起关注范围选择。
 - 生成带来源的硅谷和本地湾区科技主体日报。
 - 排除泛全球科技新闻，除非核心主体是硅谷/湾区主体。
+- 优先最新消息：先看今天；今天高信号不足时，才补充昨天，并明确标注。
 - 支持中文、英文和中英双语输出。
 - 支持全景版和聚焦版。
 - 区分已确认事实、低可信信号和未纳入噪音。
@@ -267,6 +270,7 @@ Use $silicon-valley-daily to brief me on what happened in Silicon Valley today i
 # 硅谷今天发生了什么
 
 报告窗口：...
+时效策略：优先今日；今日高信号不足时补充昨日，并明确标注
 本次关注范围：全景版
 
 ## 一句话总览

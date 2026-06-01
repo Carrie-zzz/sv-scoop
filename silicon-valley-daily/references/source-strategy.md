@@ -25,15 +25,30 @@ Hard exclusions:
 - Do not include a Washington policy item, global chip rule, cloud outage, earnings report, or product launch unless a Silicon Valley/Bay Area actor is the central subject and there is a concrete local event or direct local action.
 - Do not include broad stock moves or market commentary unless tied to a local company action, filing, layoff, product, lawsuit, or acquisition.
 
-## Time Window
+## Time Window / 时效窗口
 
-Default to the user's "today" in their timezone, then map it to Pacific Time. Timezone conversion does not expand the geographic scope. If the user is in Asia, a useful reporting window often spans:
+Default to "today + yesterday", then map both dates to Pacific Time and the user's timezone. Timezone conversion does not expand the geographic scope.
 
-- Asia morning brief: previous Pacific calendar day.
-- Asia evening brief: current Pacific morning through the latest available verified local updates.
-- US morning brief: previous 24 hours ending at report time.
+Priority order:
 
-Always state the exact reporting window in the final report.
+1. Today's verified Silicon Valley/Bay Area events.
+2. Yesterday's events only when they broke late in Pacific Time, surfaced overnight for the user, or today's verified volume is too thin.
+3. Older events only when there is a new fact today or yesterday.
+
+Today/yesterday decision rule:
+
+- If today has 5 or more high-signal verified items for panorama, do not include yesterday.
+- If a focused brief has 3 or more high-signal verified items today in the selected focus, do not include yesterday.
+- If today is thin, use yesterday to fill the brief, but label those items as "昨日 / Yesterday".
+- If an item was announced yesterday but substantially clarified or confirmed today, treat it as today's update and explain the new fact.
+
+Freshness search:
+
+- Check primary sources sorted by newest first before reading analysis pieces.
+- Prefer official announcements, filings, changelogs, GitHub releases, status pages, model cards, founder/executive posts, and investor announcements published today.
+- Use X/Twitter and community sources to detect fast-breaking leads, but confirm before inclusion.
+
+Always state the exact reporting window in the final report and distinguish today from yesterday when both are used.
 
 ## Source Tiers
 
@@ -61,11 +76,12 @@ Tier 3 signal sources:
 
 Start broad, then narrow:
 
-1. Search for date-bound local queries: "Silicon Valley startup today", "Bay Area startup funding", "San Francisco AI startup", "Palo Alto startup", "Mountain View AI", "Menlo Park VC", "San Jose tech layoffs".
-2. Search category queries with local filters: "startup funding San Francisco", "Bay Area acquisition startup", "Silicon Valley AI model release", "San Francisco developer platform launch", "Menlo Park venture capital", "Stanford startup".
-3. Search primary source domains for high-signal companies and institutions.
-4. Search social and community sources only after building a primary-source baseline.
-5. For each candidate, search the company or person's name plus the claimed event and location/HQ to confirm date, details, and Silicon Valley fit.
+1. Search for newest local queries: "Silicon Valley startup today", "Bay Area startup funding today", "San Francisco AI startup today", "Palo Alto startup today", "Mountain View AI today", "Menlo Park VC today", "San Jose tech layoffs today".
+2. If today's volume is thin, repeat with yesterday: "Bay Area startup funding yesterday", "Silicon Valley acquisition yesterday", "San Francisco AI startup yesterday".
+3. Search category queries with local filters: "startup funding San Francisco", "Bay Area acquisition startup", "Silicon Valley AI model release", "San Francisco developer platform launch", "Menlo Park venture capital", "Stanford startup".
+4. Search primary source domains for high-signal companies and institutions, sorted by newest if the tool supports it.
+5. Search social and community sources only after building a primary-source baseline.
+6. For each candidate, search the company or person's name plus the claimed event and location/HQ to confirm date, details, and Silicon Valley fit.
 
 ## Focus Taxonomy
 
@@ -126,12 +142,13 @@ Use the rubric to prioritize. It does not need to appear in the final report.
 
 - Impact, 0 to 3: affects many users, developers, customers, employees, investors, or competitors.
 - Novelty, 0 to 2: new fact, not a repackage of older news.
+- Freshness, 0 to 2: published today or updated today with a concrete new fact.
 - Credibility, 0 to 2: primary source or multiple reputable confirmations.
 - Silicon Valley fit, 0 to 3: event location, central actor, or transaction subject is clearly Silicon Valley/Bay Area.
 - Actionability, 0 to 1: changes what someone should watch, build, buy, sell, hire for, or investigate.
 - Focus fit, 0 to 2: strongly matches the user's selected category or audience.
 
-Lead with items scoring 8 or higher in panorama briefs, or 9 or higher when the day is crowded. Discard any item with Silicon Valley fit below 2, even if it is globally important.
+Lead with items scoring 9 or higher in panorama briefs, or 10 or higher when the day is crowded. Discard any item with Silicon Valley fit below 2, or freshness below 1 unless it is yesterday fill-in clearly labeled as such.
 
 ## De-Duplication
 
