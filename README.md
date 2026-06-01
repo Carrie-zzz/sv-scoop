@@ -1,8 +1,22 @@
 # Silicon Valley Daily
 
-Daily Silicon Valley tech and startup intelligence skill.
+Daily Silicon Valley tech and startup intelligence skill package.
 
-这是一个用于生成「硅谷每天发生了什么」的 Codex skill。它会先让用户选择关注范围，再检索、核验、去重并排序硅谷、湾区科技公司、AI、创业、VC、大厂平台、政策安全等信息，最后输出带来源的中文、英文或中英双语简报。
+这是一个用于生成「硅谷每天发生了什么」的通用 agent skill package。它会先让用户选择关注范围，再检索、核验、去重并排序硅谷、湾区科技公司、AI、创业、VC、大厂平台、政策安全等信息，最后输出带来源的中文、英文或中英双语简报。
+
+## Portability / 跨平台说明
+
+This package is designed to be portable across agent platforms that support skill-style instruction folders.
+
+这个仓库的核心是 `silicon-valley-daily/` 文件夹：
+
+- `SKILL.md` contains the trigger description and operating workflow.
+- `references/` contains source strategy and report templates loaded as needed.
+- `agents/openai.yaml` is optional UI metadata for platforms that understand it. Platforms that do not support this file can ignore it.
+
+The package assumes the host platform can provide web search, browser access, or another current-news retrieval tool. Without live retrieval, the agent should say the brief cannot be verified instead of inventing current events.
+
+For platforms that import one skill folder at a time, install or upload `silicon-valley-daily/` rather than the whole repository.
 
 ## What It Does
 
@@ -20,7 +34,7 @@ Daily Silicon Valley tech and startup intelligence skill.
 硅谷今天发生了什么？
 ```
 
-skill 不会马上开始搜，而是先问：
+Agent 不会马上开始搜，而是先问：
 
 ```text
 你想看哪种硅谷日报？选 1 个主模式，也可以加 1 个重点方向：
@@ -37,7 +51,7 @@ skill 不会马上开始搜，而是先问：
 你可以回复编号，比如「1」或「1 + 2」，也可以直接说你最关心什么。
 ```
 
-用户确认后，skill 再开始检索、核验和输出。
+用户确认后，agent 再开始检索、核验和输出。
 
 ### 2. 用户指定方向
 
@@ -45,7 +59,7 @@ skill 不会马上开始搜，而是先问：
 每天早上给我一份硅谷日报，我主要关注 AI 和创业融资。
 ```
 
-skill 会确认：
+agent 会确认：
 
 ```text
 好的，这次按「AI 模型与基础设施 + 创业融资与并购」来做。我会先核验来源，再按重要性排序输出。
@@ -71,19 +85,25 @@ skill 会确认：
 ## Example Prompts
 
 ```text
+硅谷今天发生了什么？
+```
+
+```text
+使用 Silicon Valley Daily，做一份今天的硅谷日报，选全景版。
+```
+
+```text
+使用 Silicon Valley Daily，做一份今天的硅谷日报，重点看 AI 基础设施和创业融资。
+```
+
+```text
+Use Silicon Valley Daily for a bilingual founder/investor brief on Silicon Valley today.
+```
+
+If your platform supports explicit skill tags, this also works:
+
+```text
 Use $silicon-valley-daily to brief me on what happened in Silicon Valley today in Chinese.
-```
-
-```text
-用 $silicon-valley-daily 做一份今天的硅谷日报，选全景版。
-```
-
-```text
-用 $silicon-valley-daily 做一份今天的硅谷日报，重点看 AI 基础设施和创业融资。
-```
-
-```text
-Use $silicon-valley-daily for a bilingual founder/investor brief on Silicon Valley today.
 ```
 
 ## Output Format Example
@@ -159,9 +179,9 @@ The example below shows the format only. Real briefs must be generated with live
 - 低可信或未纳入事项：未被一手来源或可信媒体确认的社交媒体爆料。
 ```
 
-## Skill Files
+## Package Files
 
 - `silicon-valley-daily/SKILL.md`: Trigger description and core workflow.
 - `silicon-valley-daily/references/source-strategy.md`: Source tiers, focus taxonomy, and ranking rules.
 - `silicon-valley-daily/references/report-formats.md`: Chinese, English, and bilingual report templates.
-- `silicon-valley-daily/agents/openai.yaml`: UI metadata.
+- `silicon-valley-daily/agents/openai.yaml`: Optional UI metadata for compatible platforms.
