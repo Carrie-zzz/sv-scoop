@@ -183,5 +183,6 @@ The example below shows the format only. Real briefs must be generated with live
 
 - `silicon-valley-daily/SKILL.md`: Trigger description and core workflow.
 - `silicon-valley-daily/references/source-strategy.md`: Source tiers, focus taxonomy, and ranking rules.
+- `silicon-valley-daily/references/watchlist.md`: Built-in source stack, daily research methods, and X/Twitter watchlist.
 - `silicon-valley-daily/references/report-formats.md`: Chinese, English, and bilingual report templates.
 - `silicon-valley-daily/agents/openai.yaml`: Optional UI metadata for compatible platforms.

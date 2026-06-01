@@ -17,7 +17,7 @@ Create a reliable daily intelligence brief about Silicon Valley: what happened, 
 2. Select focus first / 先选择关注范围。If the user has not already specified a focus, ask the focus question below and stop. Do not research or draft the brief until the user chooses a focus.
 3. Confirm and proceed / 确认后再执行。After the user chooses, briefly confirm the selected focus and reporting mode, then research. Do not ask for a second confirmation unless the user's choice is ambiguous.
 4. Gather source-backed items / 采集有来源支撑的信息。Use available web/search/browser tools. If live web access is unavailable, state that the brief cannot be verified rather than inventing current events.
-5. Search broadly first, then target primary sources / 先广搜，再查一手来源。Read `references/source-strategy.md` when gathering sources, ranking signals, or deciding whether an item belongs in the brief.
+5. Search broadly first, then target primary sources / 先广搜，再查一手来源。Read `references/source-strategy.md` when gathering sources, ranking signals, or deciding whether an item belongs in the brief. Read `references/watchlist.md` when selecting built-in sources, search routines, or X/Twitter accounts to monitor.
 6. Cluster duplicate coverage / 合并重复报道。Prefer the earliest primary source plus one reputable independent source when available.
 7. Rank items / 排序筛选。Rank by impact, novelty, credibility, Silicon Valley relevance, actionability, and the user's selected focus. Include fewer, stronger items rather than a long feed of weak mentions.
 8. Draft in the requested language and format / 按用户要求输出。Read `references/report-formats.md` when drafting the final report or adapting it for different audiences.
