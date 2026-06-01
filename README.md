@@ -4,7 +4,7 @@
 
 ## English
 
-Silicon Valley Daily is a portable agent skill package for producing sourced daily briefings on what happened in Silicon Valley, the Bay Area tech ecosystem, AI labs, startups, VC, Big Tech platforms, policy, security, and local ecosystem signals.
+Silicon Valley Daily is a portable agent skill package for producing sourced daily briefings on what happened in Silicon Valley. It is intentionally narrow: the event must happen in Silicon Valley/Bay Area or directly center on a Silicon Valley/Bay Area company, fund, university, lab, or community.
 
 The package first asks the user to choose a focus area, then retrieves, verifies, de-duplicates, ranks, and drafts a Chinese, English, or bilingual brief with citations.
 
@@ -25,7 +25,8 @@ For platforms that import one skill folder at a time, install or upload `silicon
 ### What It Does
 
 - Starts with a focus-selection interaction unless the user already specified a focus.
-- Produces sourced daily briefs about Silicon Valley and Bay Area tech.
+- Produces sourced daily briefs about Silicon Valley and local Bay Area tech actors.
+- Excludes global tech news unless a Silicon Valley/Bay Area actor is the central subject.
 - Supports Chinese, English, and bilingual output.
 - Supports panorama briefs and focused briefs.
 - Separates confirmed facts, lower-confidence signals, and excluded noise.
@@ -166,7 +167,9 @@ Focus: Panorama
 
 ## 中文
 
-Silicon Valley Daily 是一个可跨平台安装的 agent skill package，用来生成「硅谷每天发生了什么」日报。它覆盖硅谷、湾区科技公司、AI 实验室、创业公司、VC、大厂平台、政策安全和湾区本地生态信号。
+Silicon Valley Daily 是一个可跨平台安装的 agent skill package，用来生成「硅谷每天发生了什么」日报。
+
+它的产品边界是小而美：事件必须发生在硅谷/湾区，或核心主体是硅谷/湾区公司、基金、大学、实验室、社区。只是泛科技相关、只是 AI 很热、只是某个硅谷 VC 参投外地公司，默认不收录。
 
 这个 package 会先让用户选择关注范围，再检索、核验、去重、排序，并输出带来源的中文、英文或中英双语简报。
 
@@ -187,7 +190,8 @@ Silicon Valley Daily 是一个可跨平台安装的 agent skill package，用来
 ### 功能
 
 - 如果用户没有提前指定关注范围，先发起关注范围选择。
-- 生成带来源的硅谷和湾区科技日报。
+- 生成带来源的硅谷和本地湾区科技主体日报。
+- 排除泛全球科技新闻，除非核心主体是硅谷/湾区主体。
 - 支持中文、英文和中英双语输出。
 - 支持全景版和聚焦版。
 - 区分已确认事实、低可信信号和未纳入噪音。

@@ -1,6 +1,6 @@
 ---
 name: silicon-valley-daily
-description: "Produce a sourced Chinese, English, or bilingual daily briefing on Silicon Valley, Bay Area, and US tech/startup events. Use when users ask what happened in Silicon Valley today, 硅谷今天发生了什么, 硅谷日报, Silicon Valley daily digest, daily AI/startup/VC news briefings, startup funding or M&A updates, founder or investor intelligence, or a concise morning/evening digest with citations."
+description: "Produce a tightly scoped, sourced Chinese, English, or bilingual daily briefing on events that happened in Silicon Valley or directly involve Silicon Valley/Bay Area tech actors. Use when users ask what happened in Silicon Valley today, 硅谷今天发生了什么, 硅谷日报, Silicon Valley daily digest, Silicon Valley AI/startup/VC news, local startup funding or M&A updates, founder or investor intelligence, or a concise morning/evening digest with citations."
 ---
 
 # Silicon Valley Daily
@@ -17,11 +17,27 @@ Create a reliable daily intelligence brief about Silicon Valley: what happened, 
 2. Select focus first / 先选择关注范围。If the user has not already specified a focus, ask the focus question below and stop. Do not research or draft the brief until the user chooses a focus.
 3. Confirm and proceed / 确认后再执行。After the user chooses, briefly confirm the selected focus and reporting mode, then research. Do not ask for a second confirmation unless the user's choice is ambiguous.
 4. Gather source-backed items / 采集有来源支撑的信息。Use available web/search/browser tools. If live web access is unavailable, state that the brief cannot be verified rather than inventing current events.
-5. Search broadly first, then target primary sources / 先广搜，再查一手来源。Read `references/source-strategy.md` when gathering sources, ranking signals, or deciding whether an item belongs in the brief. Read `references/watchlist.md` when selecting built-in sources, search routines, or X/Twitter accounts to monitor.
-6. Cluster duplicate coverage / 合并重复报道。Prefer the earliest primary source plus one reputable independent source when available.
-7. Rank items / 排序筛选。Rank by impact, novelty, credibility, Silicon Valley relevance, actionability, and the user's selected focus. Include fewer, stronger items rather than a long feed of weak mentions.
-8. Draft in the requested language and format / 按用户要求输出。Read `references/report-formats.md` when drafting the final report or adapting it for different audiences.
-9. Cite every factual item / 每个事实都给来源。Use absolute dates, distinguish confirmed facts from rumors, and call out notable gaps in coverage.
+5. Apply the Silicon Valley boundary test / 先过硅谷边界测试。Do not include a candidate unless it clearly happened in Silicon Valley/Bay Area or directly involves a Silicon Valley/Bay Area actor as the central subject.
+6. Search broadly first, then target primary sources / 先广搜，再查一手来源。Read `references/source-strategy.md` when gathering sources, ranking signals, or deciding whether an item belongs in the brief. Read `references/watchlist.md` when selecting built-in sources, search routines, or X/Twitter accounts to monitor.
+7. Cluster duplicate coverage / 合并重复报道。Prefer the earliest primary source plus one reputable independent source when available.
+8. Rank items / 排序筛选。Rank by impact, novelty, credibility, Silicon Valley fit, actionability, and the user's selected focus. Include fewer, stronger local items rather than a broad tech news feed.
+9. Draft in the requested language and format / 按用户要求输出。Read `references/report-formats.md` when drafting the final report or adapting it for different audiences.
+10. Cite every factual item / 每个事实都给来源。Use absolute dates, distinguish confirmed facts from rumors, and call out notable gaps in coverage.
+
+## Boundary / 产品边界
+
+This is a small, focused product: "what happened in Silicon Valley today", not "global tech news from a Silicon Valley perspective".
+
+每条候选新闻必须通过 Silicon Valley Test 至少一项：
+
+- 地点：事件发生在 Silicon Valley core 或明确的 Bay Area tech ecosystem 内。
+- 主体：新闻中心主体是总部、核心团队、重要研发/产品团队位于 Silicon Valley/Bay Area 的公司、基金、大学、实验室或社区。
+- 资本：融资、并购、基金、人事变动的核心对象是 Silicon Valley/Bay Area 公司、基金或合伙人。
+- 本地生态：事件直接发生在 Stanford、Berkeley、YC、湾区活动、湾区招聘/裁员、湾区办公室、本地政策或社区中。
+
+Exclude global or US tech stories that are merely related to AI, startups, VC, or Big Tech. If the local link is weak, omit it or mention it only in "未纳入事项" when useful.
+
+For startup funding and M&A, do not include an outside-region company just because a Silicon Valley VC participated. Include it only if the target company, buyer, seller, founding team, or core operating base is Silicon Valley/Bay Area, or if the event itself is about a Silicon Valley fund or partner.
 
 ## Interaction Contract / 交互规则
 

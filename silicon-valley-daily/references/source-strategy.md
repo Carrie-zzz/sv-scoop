@@ -2,18 +2,35 @@
 
 Use this reference when researching, verifying, and ranking Silicon Valley daily brief items.
 
-## Scope
+## Scope / 地理与主体边界
 
-Silicon Valley includes the San Francisco Bay Area startup and technology ecosystem, major companies with strong Bay Area or Silicon Valley relevance, venture capital activity, AI labs, developer platforms, and policy or market events that materially affect this ecosystem.
+This skill is intentionally narrow. It covers events that happened in Silicon Valley or directly involve Silicon Valley/Bay Area tech actors. It is not a general US tech or global AI digest.
 
-Include non-Bay-Area events only when they change the Silicon Valley picture. Examples: a Washington regulation affecting AI labs, a chip export rule affecting Nvidia customers, a major cloud outage, or a large acquisition involving a Bay Area company.
+Default geography:
+
+- Silicon Valley core: Palo Alto, Menlo Park, Mountain View, Sunnyvale, Santa Clara, Cupertino, San Jose, Redwood City, San Mateo, Stanford, and nearby Santa Clara/San Mateo County startup corridors.
+- Bay Area tech ecosystem when relevant: San Francisco, Berkeley, Oakland, Emeryville, Fremont, San Bruno, South San Francisco, and other Bay Area locations only when the event is clearly part of the local tech/startup ecosystem.
+
+Silicon Valley Test:
+
+- Location: the event physically happened in the Silicon Valley/Bay Area tech ecosystem.
+- Actor: the central company, fund, lab, university, community, or product team is based in Silicon Valley/Bay Area.
+- Capital: the funding, M&A, fund, or partner move centers on a Silicon Valley/Bay Area company, fund, or partner.
+- Local ecosystem: the event involves Stanford, Berkeley, YC, Bay Area events, Bay Area hiring/layoffs, office moves, local regulation, or local startup community changes.
+
+Hard exclusions:
+
+- Do not include non-Bay-Area events merely because they are AI, startup, VC, or Big Tech news.
+- Do not include a New York, London, Paris, Beijing, Singapore, or remote-first company's funding round just because a Silicon Valley VC participated.
+- Do not include a Washington policy item, global chip rule, cloud outage, earnings report, or product launch unless a Silicon Valley/Bay Area actor is the central subject and there is a concrete local event or direct local action.
+- Do not include broad stock moves or market commentary unless tied to a local company action, filing, layoff, product, lawsuit, or acquisition.
 
 ## Time Window
 
-Default to the user's "today" in their timezone, then map it to Pacific Time. If the user is in Asia, a useful daily window often spans:
+Default to the user's "today" in their timezone, then map it to Pacific Time. Timezone conversion does not expand the geographic scope. If the user is in Asia, a useful reporting window often spans:
 
-- Asia morning brief: previous Pacific calendar day plus overnight Asia updates.
-- Asia evening brief: current Pacific morning plus Asia daytime updates.
+- Asia morning brief: previous Pacific calendar day.
+- Asia evening brief: current Pacific morning through the latest available verified local updates.
 - US morning brief: previous 24 hours ending at report time.
 
 Always state the exact reporting window in the final report.
@@ -44,11 +61,11 @@ Tier 3 signal sources:
 
 Start broad, then narrow:
 
-1. Search for date-bound broad queries: "Silicon Valley startup today", "AI startup funding today", "Bay Area tech news", "OpenAI Anthropic Google Meta Nvidia today".
-2. Search category queries: "startup funding San Francisco", "AI model release", "developer platform launch", "venture capital layoffs", "SEC filing acquisition tech".
+1. Search for date-bound local queries: "Silicon Valley startup today", "Bay Area startup funding", "San Francisco AI startup", "Palo Alto startup", "Mountain View AI", "Menlo Park VC", "San Jose tech layoffs".
+2. Search category queries with local filters: "startup funding San Francisco", "Bay Area acquisition startup", "Silicon Valley AI model release", "San Francisco developer platform launch", "Menlo Park venture capital", "Stanford startup".
 3. Search primary source domains for high-signal companies and institutions.
 4. Search social and community sources only after building a primary-source baseline.
-5. For each candidate, search the company or person's name plus the claimed event to confirm date and details.
+5. For each candidate, search the company or person's name plus the claimed event and location/HQ to confirm date, details, and Silicon Valley fit.
 
 ## Focus Taxonomy
 
@@ -56,23 +73,23 @@ Use this taxonomy to avoid overloading the user. If the user chooses focus areas
 
 AI models and infrastructure:
 
-- Frontier model releases, evals, pricing, API changes, chips, datacenters, cloud capacity, AI developer tools, open-source models, research with near-term product implications.
+- Frontier model releases, evals, pricing, API changes, chips, datacenters, cloud capacity, AI developer tools, open-source models, research with near-term product implications. Include only when the lab, product team, datacenter decision, company, or event is Silicon Valley/Bay Area-centered.
 
 Startups, funding, and M&A:
 
-- Seed through growth rounds, shutdowns, acquisitions, spinouts, accelerator batches, notable pivots, customer traction, category formation.
+- Seed through growth rounds, shutdowns, acquisitions, spinouts, accelerator batches, notable pivots, customer traction, category formation. The target company or core transaction subject must be Silicon Valley/Bay Area, not merely backed by a Silicon Valley investor.
 
 Big Tech and platforms:
 
-- Apple, Google, Meta, Microsoft, Amazon, Nvidia, OpenAI, Anthropic, xAI, Databricks, Snowflake, Salesforce, Stripe, and other platform companies when their actions affect builders or customers.
+- Apple, Google, Meta, Nvidia, OpenAI, Anthropic, xAI, Databricks, Snowflake, Salesforce, Stripe, and other Silicon Valley/Bay Area-centered platform companies. For non-local giants such as Microsoft or Amazon, include only when the event centers on their Bay Area team, local office, local acquisition, local hiring/layoff, or direct transaction with a Silicon Valley/Bay Area actor.
 
 VC, accelerators, and talent flows:
 
-- New funds, partner moves, major founder departures, hiring freezes, layoffs, compensation shifts, immigration/talent constraints, university lab-to-startup movement.
+- Silicon Valley/Bay Area fund formation, partner moves, accelerator batches, major founder departures, hiring freezes, layoffs, compensation shifts, immigration/talent constraints, university lab-to-startup movement.
 
 Policy, litigation, and security:
 
-- AI regulation, antitrust, copyright, privacy, export controls, court rulings, regulator actions, major breaches, platform abuse, supply-chain security.
+- Local or actor-specific AI regulation, antitrust, copyright, privacy, export controls, court rulings, regulator actions, major breaches, platform abuse, supply-chain security. Include only when a Silicon Valley/Bay Area actor is central.
 
 Founder/operator signals:
 
@@ -110,11 +127,11 @@ Use the rubric to prioritize. It does not need to appear in the final report.
 - Impact, 0 to 3: affects many users, developers, customers, employees, investors, or competitors.
 - Novelty, 0 to 2: new fact, not a repackage of older news.
 - Credibility, 0 to 2: primary source or multiple reputable confirmations.
-- Silicon Valley relevance, 0 to 2: direct Bay Area actor or material ecosystem impact.
+- Silicon Valley fit, 0 to 3: event location, central actor, or transaction subject is clearly Silicon Valley/Bay Area.
 - Actionability, 0 to 1: changes what someone should watch, build, buy, sell, hire for, or investigate.
 - Focus fit, 0 to 2: strongly matches the user's selected category or audience.
 
-Lead with items scoring 7 or higher in balanced briefs, or 8 or higher when the day is crowded. Include lower-scoring items only when they add useful texture or fill an important selected category.
+Lead with items scoring 8 or higher in panorama briefs, or 9 or higher when the day is crowded. Discard any item with Silicon Valley fit below 2, even if it is globally important.
 
 ## De-Duplication
 
@@ -128,3 +145,4 @@ Cluster coverage by underlying event. Pick one headline per event. Prefer the ea
 - The number in the headline does not match the body or filing.
 - The event is mostly market-price movement without an operational reason.
 - The item is globally interesting but has weak Silicon Valley relevance.
+- The company is outside Silicon Valley/Bay Area and the only local connection is a minor investor, customer, or commentator.

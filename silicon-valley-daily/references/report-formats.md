@@ -35,7 +35,7 @@ After the user answers, begin with:
 # 硅谷今天发生了什么
 
 报告窗口：YYYY-MM-DD HH:mm 至 YYYY-MM-DD HH:mm（用户时区）；对应 Pacific Time：...
-覆盖范围：硅谷、湾区科技公司、AI/创业/VC，以及影响硅谷生态的美国科技事件
+覆盖范围：发生在硅谷/湾区，或核心主体为硅谷/湾区公司、基金、大学、实验室、社区的事件
 本次关注范围：全景版
 
 ## 一句话总览
@@ -155,7 +155,8 @@ Use this when the user asks in English or explicitly requests an English output:
 # What Happened in Silicon Valley Today
 
 Reporting window: YYYY-MM-DD HH:mm to YYYY-MM-DD HH:mm (user timezone); Pacific Time: ...
-Scope: Silicon Valley, Bay Area tech companies, AI/startups/VC, and US tech events with ecosystem impact.
+Scope: events that happened in Silicon Valley/Bay Area or directly center on a Silicon Valley/Bay Area company, fund, university, lab, or community.
+Boundary: exclude global tech news unless the central actor or transaction subject is Silicon Valley/Bay Area.
 Focus: panorama / AI models and infrastructure / startups, funding, and M&A / Big Tech and platforms / VC and talent / policy and security / founder/operator signals / local Bay Area ecosystem
 
 ## Executive Takeaway
@@ -287,4 +288,6 @@ Use this when the user asks what matters for builders, founders, operators, or i
 - For bilingual output, do not translate company/product/person names unless there is a widely used Chinese name.
 - If the user has not selected a focus, ask the interactive start question and stop. Do not produce the report yet.
 - If the user selects panorama, include all category sections even when some sections only say "今日无高信号".
+- Apply the Silicon Valley boundary before ranking. Do not include global tech news just because it is related to AI, VC, startups, or Big Tech.
+- For funding and M&A, include only when the target company, buyer, seller, fund, partner, or core operating base is Silicon Valley/Bay Area.
 - If the day is quiet, say so and explain which sources were checked.
