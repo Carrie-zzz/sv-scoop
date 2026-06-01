@@ -1,0 +1,4 @@
+interface:
+  display_name: "Silicon Valley Daily"
+  short_description: "Bilingual Silicon Valley tech and startup brief"
+  default_prompt: "Use $silicon-valley-daily to brief me on what happened in Silicon Valley today in Chinese."
