@@ -2,14 +2,14 @@
 
 Daily Silicon Valley tech and startup intelligence skill.
 
-这是一个用于生成「硅谷每天发生了什么」的 Codex skill。它会检索、核验、去重并排序硅谷、湾区科技公司、AI、创业、VC、大厂平台、政策安全等信息，最后输出带来源的中文、英文或中英双语简报。
+这是一个用于生成「硅谷每天发生了什么」的 Codex skill。它会先让用户选择关注范围，再检索、核验、去重并排序硅谷、湾区科技公司、AI、创业、VC、大厂平台、政策安全等信息，最后输出带来源的中文、英文或中英双语简报。
 
 ## What It Does
 
+- Starts with a focus-selection interaction unless the user already specified a focus.
 - Produces sourced daily briefs about Silicon Valley and Bay Area tech.
 - Supports Chinese, English, and bilingual output.
-- Handles broad daily overviews and focused reports.
-- Asks the user to choose focus areas when the topic is too broad or meant for recurring use.
+- Supports panorama briefs and focused briefs.
 - Separates confirmed facts, lower-confidence signals, and excluded noise.
 
 ## 使用流程
@@ -20,27 +20,46 @@ Daily Silicon Valley tech and startup intelligence skill.
 硅谷今天发生了什么？
 ```
 
-默认输出「全景版」：先给当天最重要的 5 件事，再按类别整理。
+skill 不会马上开始搜，而是先问：
 
-### 2. 如果信息太多，用户可以指定方向
+```text
+你想看哪种硅谷日报？选 1 个主模式，也可以加 1 个重点方向：
+
+1. 全景版：各领域都扫一遍，按板块列出重要新闻
+2. AI 模型与基础设施
+3. 创业公司、融资与并购
+4. 大厂、平台与开发者生态
+5. VC、孵化器与人才流动
+6. 政策、诉讼与安全
+7. 创始人和经营信号
+8. 湾区本地生态、大学、活动与社区
+
+你可以回复编号，比如「1」或「1 + 2」，也可以直接说你最关心什么。
+```
+
+用户确认后，skill 再开始检索、核验和输出。
+
+### 2. 用户指定方向
 
 ```text
 每天早上给我一份硅谷日报，我主要关注 AI 和创业融资。
 ```
 
-skill 会优先覆盖用户选择的 1-2 个方向，并只保留其他类别里的重大事件。
-
-### 3. 如果用户没有选择方向，但场景适合长期订阅
-
-skill 会先问一句：
+skill 会确认：
 
 ```text
-硅谷每天信息量比较大。你希望我之后优先关注哪 1-2 块？
-可选：AI 模型与基础设施、创业公司/融资/并购、大厂与平台生态、VC/孵化器/人才流动、政策/诉讼/安全、创始人经营信号、湾区本地生态。
+好的，这次按「AI 模型与基础设施 + 创业融资与并购」来做。我会先核验来源，再按重要性排序输出。
 ```
+
+然后优先覆盖用户选择的 1-2 个方向，并只保留其他类别里的重大事件。
+
+### 3. 用户选择全景版
+
+全景版不是混合新闻流，而是分领域输出。每个板块都要检查，有高信号就列新闻，没有就说明「今日无高信号」。
 
 ### 4. 可选关注范围
 
+- Panorama / 全景版
 - AI models and infrastructure / AI 模型与基础设施
 - Startups, funding, and M&A / 创业公司、融资与并购
 - Big Tech and platforms / 大厂、平台与开发者生态
@@ -53,6 +72,10 @@ skill 会先问一句：
 
 ```text
 Use $silicon-valley-daily to brief me on what happened in Silicon Valley today in Chinese.
+```
+
+```text
+用 $silicon-valley-daily 做一份今天的硅谷日报，选全景版。
 ```
 
 ```text
@@ -72,11 +95,11 @@ The example below shows the format only. Real briefs must be generated with live
 
 报告窗口：2026-06-01 08:00 至 2026-06-01 18:00（Asia/Shanghai）；对应 Pacific Time：2026-05-31 17:00 至 2026-06-01 03:00
 覆盖范围：硅谷、湾区科技公司、AI/创业/VC，以及影响硅谷生态的美国科技事件
-本次关注范围：AI 模型与基础设施、创业融资与并购
+本次关注范围：全景版
 
 ## 一句话总览
 
-今天最重要的变化是：AI 基础设施和资本流向继续集中到少数高确定性平台，创业公司需要更清楚地证明分发、成本或数据优势。
+今天最重要的变化是：AI 基础设施、平台政策和创业融资仍在互相影响，创始人需要同时看技术供给、分发入口和资本信号。
 
 ## 最值得看的 5 件事
 
@@ -104,9 +127,25 @@ The example below shows the format only. Real briefs must be generated with live
 
 - **标题**：金额、轮次、投资方、并购方或战略意义。来源：[Source](https://example.com)
 
-### 其他重要信号
+### 大厂、平台与开发者生态
 
-- **标题**：不属于本次重点，但足够重要，所以保留。来源：[Source](https://example.com)
+- **标题**：平台、客户、开发者或竞争格局影响。来源：[Source](https://example.com)
+
+### VC、孵化器与人才流动
+
+- 今日无高信号：已检查 VC/孵化器公告、可信媒体和公开招聘/人事信号，未发现足够重要的新进展。
+
+### 政策、诉讼与安全
+
+- **标题**：风险、监管节点或安全事件。来源：[Source](https://example.com)
+
+### 创始人和经营信号
+
+- **标题**：定价、GTM、客户采用、岗位变化或开发者反馈。来源：[Source](https://example.com)
+
+### 湾区本地生态、大学、活动与社区
+
+- 今日无高信号：未发现足够重要的新进展。
 
 ## 接下来值得盯的信号
 

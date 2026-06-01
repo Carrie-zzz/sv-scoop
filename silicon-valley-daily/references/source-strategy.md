@@ -84,18 +84,24 @@ Local Bay Area ecosystem:
 
 ## Default Allocation
 
-For a standard balanced brief, use roughly this allocation:
+For a panorama brief, every category is part of the product experience:
 
-- 5 top stories across all categories.
-- 2 to 4 short category sections.
-- Maximum 1 to 2 items per category unless the day is dominated by that category.
-- Omit empty categories instead of filling space.
+- Start with 3 to 5 cross-category top stories.
+- Then include all focus areas as sections.
+- Put 1 to 3 verified items in each non-empty section.
+- For categories with no high-signal updates, write "今日无高信号" and optionally name the type of sources checked.
+- Do not move normal category items into "other important signals"; reserve that section for events outside the selected focus or taxonomy.
 
 For a focused brief:
 
 - Put 60 to 80 percent of the report into the selected focus areas.
 - Include a small "其他重要信号 / Other important signals" section for major out-of-focus events.
 - Explicitly state the selected focus at the top of the report.
+
+For a quick brief:
+
+- Still require focus selection first unless the user already provided it.
+- If the user chooses panorama, include one strongest item per active category.
 
 ## Ranking Rubric
 

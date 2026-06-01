@@ -14,17 +14,41 @@ Create a reliable daily intelligence brief about Silicon Valley: what happened, 
 ## Core Workflow / 核心流程
 
 1. Define the reporting window / 定义报道窗口。If the user says "today", use the user's current date and timezone, then also state the corresponding Pacific Time window because Silicon Valley news often lands on PT.
-2. Select focus and depth / 选择关注范围和深度。Default to a balanced overview for one-off broad requests. Ask one short preference question before researching when the user wants a recurring daily brief, says there is too much information, or asks for "what should I follow". Use the focus areas below.
-3. Gather source-backed items / 采集有来源支撑的信息。Use available web/search/browser tools. If live web access is unavailable, state that the brief cannot be verified rather than inventing current events.
-4. Search broadly first, then target primary sources / 先广搜，再查一手来源。Read `references/source-strategy.md` when gathering sources, ranking signals, or deciding whether an item belongs in the brief.
-5. Cluster duplicate coverage / 合并重复报道。Prefer the earliest primary source plus one reputable independent source when available.
-6. Rank items / 排序筛选。Rank by impact, novelty, credibility, Silicon Valley relevance, actionability, and the user's selected focus. Include fewer, stronger items rather than a long feed of weak mentions.
-7. Draft in the requested language and format / 按用户要求输出。Read `references/report-formats.md` when drafting the final report or adapting it for different audiences.
-8. Cite every factual item / 每个事实都给来源。Use absolute dates, distinguish confirmed facts from rumors, and call out notable gaps in coverage.
+2. Select focus first / 先选择关注范围。If the user has not already specified a focus, ask the focus question below and stop. Do not research or draft the brief until the user chooses a focus.
+3. Confirm and proceed / 确认后再执行。After the user chooses, briefly confirm the selected focus and reporting mode, then research. Do not ask for a second confirmation unless the user's choice is ambiguous.
+4. Gather source-backed items / 采集有来源支撑的信息。Use available web/search/browser tools. If live web access is unavailable, state that the brief cannot be verified rather than inventing current events.
+5. Search broadly first, then target primary sources / 先广搜，再查一手来源。Read `references/source-strategy.md` when gathering sources, ranking signals, or deciding whether an item belongs in the brief.
+6. Cluster duplicate coverage / 合并重复报道。Prefer the earliest primary source plus one reputable independent source when available.
+7. Rank items / 排序筛选。Rank by impact, novelty, credibility, Silicon Valley relevance, actionability, and the user's selected focus. Include fewer, stronger items rather than a long feed of weak mentions.
+8. Draft in the requested language and format / 按用户要求输出。Read `references/report-formats.md` when drafting the final report or adapting it for different audiences.
+9. Cite every factual item / 每个事实都给来源。Use absolute dates, distinguish confirmed facts from rumors, and call out notable gaps in coverage.
+
+## Interaction Contract / 交互规则
+
+For broad requests such as "硅谷今天发生了什么" or "What happened in Silicon Valley today", ask this first:
+
+```text
+你想看哪种硅谷日报？选 1 个主模式，也可以加 1 个重点方向：
+
+1. 全景版：各领域都扫一遍，按板块列出重要新闻
+2. AI 模型与基础设施
+3. 创业公司、融资与并购
+4. 大厂、平台与开发者生态
+5. VC、孵化器与人才流动
+6. 政策、诉讼与安全
+7. 创始人和经营信号
+8. 湾区本地生态、大学、活动与社区
+
+你可以回复编号，比如「1」或「1 + 2」，也可以直接说你最关心什么。
+```
+
+If the user already says "重点看 AI 和融资" or "founder/investor brief", skip the menu, confirm the focus in one sentence, and proceed.
+
+If the user selects "全景版 / panorama", produce a category-by-category report covering every focus area. Include "今日无高信号" for a category only after checking it; do not fill empty categories with weak news.
 
 ## Focus Areas / 关注范围
 
-If the user's interest is unclear and the brief may become noisy, offer this compact menu and ask them to pick up to 2 primary areas:
+Use the same focus taxonomy in the interaction menu, source gathering, ranking, and final report:
 
 - AI models and infrastructure / AI 模型与基础设施
 - Startups, funding, and M&A / 创业公司、融资与并购
@@ -34,11 +58,10 @@ If the user's interest is unclear and the brief may become noisy, offer this com
 - Founder/operator signals / 创始人和经营信号
 - Local Bay Area ecosystem / 湾区本地生态、大学、活动与社区
 
-Do not ask a clarifying question for every generic "today" request. Produce a balanced overview, then end with a short note that future briefs can be focused by category.
-
 ## Reporting Modes / 报告模式
 
-- Quick / 快讯：5 to 8 bullets, each with one source and a short "why it matters".
+- Quick / 快讯：after focus selection, 5 to 8 bullets, each with one source and a short "why it matters".
+- Panorama / 全景版：top takeaway plus sectioned lists for all focus areas.
 - Standard / 标准日报：executive summary, ranked top stories, category sections, watchlist, and source ledger.
 - Deep / 深度版：standard brief plus implications for founders, investors, operators, or a named company/category.
 - Focused / 聚焦版：prioritize 1 to 2 selected focus areas and summarize other categories only if they contain major events.
