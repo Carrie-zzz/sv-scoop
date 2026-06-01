@@ -1,34 +1,201 @@
 # Silicon Valley Daily
 
-Daily Silicon Valley tech and startup intelligence skill package.
+[English](#english) | [中文](#中文)
 
-这是一个用于生成「硅谷每天发生了什么」的通用 agent skill package。它会先让用户选择关注范围，再检索、核验、去重并排序硅谷、湾区科技公司、AI、创业、VC、大厂平台、政策安全等信息，最后输出带来源的中文、英文或中英双语简报。
+## English
 
-## Portability / 跨平台说明
+Silicon Valley Daily is a portable agent skill package for producing sourced daily briefings on what happened in Silicon Valley, the Bay Area tech ecosystem, AI labs, startups, VC, Big Tech platforms, policy, security, and local ecosystem signals.
 
-This package is designed to be portable across agent platforms that support skill-style instruction folders.
+The package first asks the user to choose a focus area, then retrieves, verifies, de-duplicates, ranks, and drafts a Chinese, English, or bilingual brief with citations.
 
-这个仓库的核心是 `silicon-valley-daily/` 文件夹：
+### Portability
+
+This package is designed for agent platforms that support skill-style instruction folders.
+
+The core installable folder is `silicon-valley-daily/`:
 
 - `SKILL.md` contains the trigger description and operating workflow.
-- `references/` contains source strategy and report templates loaded as needed.
-- `agents/openai.yaml` is optional UI metadata for platforms that understand it. Platforms that do not support this file can ignore it.
+- `references/` contains source strategy, watchlists, and report templates loaded as needed.
+- `agents/openai.yaml` is optional UI metadata for compatible platforms. Platforms that do not support this file can ignore it.
 
-The package assumes the host platform can provide web search, browser access, or another current-news retrieval tool. Without live retrieval, the agent should say the brief cannot be verified instead of inventing current events.
+The host platform should provide web search, browser access, X/Twitter access, or another current-news retrieval tool. Without live retrieval, the agent should say the brief cannot be verified instead of inventing current events.
 
 For platforms that import one skill folder at a time, install or upload `silicon-valley-daily/` rather than the whole repository.
 
-## What It Does
+### What It Does
 
 - Starts with a focus-selection interaction unless the user already specified a focus.
 - Produces sourced daily briefs about Silicon Valley and Bay Area tech.
 - Supports Chinese, English, and bilingual output.
 - Supports panorama briefs and focused briefs.
 - Separates confirmed facts, lower-confidence signals, and excluded noise.
+- Includes a built-in source stack and X/Twitter watchlist for discovery.
 
-## 使用流程
+### Usage Flow
 
-### 1. 用户直接问
+User asks:
+
+```text
+What happened in Silicon Valley today?
+```
+
+The agent asks for focus first:
+
+```text
+Which Silicon Valley Daily mode do you want? Pick one main mode, optionally with one extra focus:
+
+1. Panorama: scan all areas and list important news by section
+2. AI models and infrastructure
+3. Startups, funding, and M&A
+4. Big Tech, platforms, and developer ecosystem
+5. VC, accelerators, and talent flows
+6. Policy, litigation, and security
+7. Founder and operator signals
+8. Local Bay Area ecosystem, universities, events, and communities
+
+Reply with a number, such as "1" or "1 + 2", or describe what you care about most.
+```
+
+After the user confirms, the agent researches and drafts the brief.
+
+### Focus Areas
+
+- Panorama
+- AI models and infrastructure
+- Startups, funding, and M&A
+- Big Tech, platforms, and developer ecosystem
+- VC, accelerators, and talent flows
+- Policy, litigation, and security
+- Founder and operator signals
+- Local Bay Area ecosystem, universities, events, and communities
+
+### Example Prompts
+
+```text
+What happened in Silicon Valley today?
+```
+
+```text
+Use Silicon Valley Daily for a panorama brief on Silicon Valley today.
+```
+
+```text
+Use Silicon Valley Daily for today's Silicon Valley brief, focused on AI infrastructure and startup funding.
+```
+
+```text
+Use Silicon Valley Daily for a bilingual founder/investor brief on Silicon Valley today.
+```
+
+If your platform supports explicit skill tags:
+
+```text
+Use $silicon-valley-daily to brief me on what happened in Silicon Valley today in Chinese.
+```
+
+### Output Shape
+
+A panorama brief is not a mixed news feed. It should be sectioned:
+
+```markdown
+# What Happened in Silicon Valley Today
+
+Reporting window: ...
+Focus: Panorama
+
+## Executive Takeaway
+
+...
+
+## Top Stories
+
+1. **Headline**
+   What happened: ...
+   Why it matters: ...
+   Who is affected: founders / investors / developers / Big Tech / users
+   Confidence: high / medium / low
+   Source: [Source](https://example.com)
+
+## By Sector
+
+### AI Models and Infrastructure
+
+- **Headline**: What happened. Why it matters. Source: [Source](https://example.com)
+
+### Startups, Funding, and M&A
+
+- **Headline**: Key facts such as amount, round, investors, buyer, or strategic rationale. Source: [Source](https://example.com)
+
+### Big Tech, Platforms, and Developer Ecosystem
+
+- **Headline**: Platform, customer, developer, or competitive impact. Source: [Source](https://example.com)
+
+### VC, Accelerators, and Talent Flows
+
+- No high-signal update today: checked VC announcements, reputable media, and hiring/personnel signals.
+
+### Policy, Litigation, and Security
+
+- **Headline**: Risk, regulatory milestone, or security event. Source: [Source](https://example.com)
+
+### Founder and Operator Signals
+
+- **Headline**: Pricing, GTM, customer adoption, hiring, or developer feedback. Source: [Source](https://example.com)
+
+### Local Bay Area Ecosystem
+
+- No high-signal update today.
+
+## Signals to Watch
+
+- ...
+
+## Source Notes
+
+- Verified sources: ...
+- Low-confidence or excluded items: ...
+```
+
+### Package Files
+
+- `silicon-valley-daily/SKILL.md`: Trigger description and core workflow.
+- `silicon-valley-daily/references/source-strategy.md`: Source tiers, focus taxonomy, and ranking rules.
+- `silicon-valley-daily/references/watchlist.md`: Built-in source stack, daily research methods, and X/Twitter watchlist.
+- `silicon-valley-daily/references/report-formats.md`: Chinese, English, and bilingual report templates.
+- `silicon-valley-daily/agents/openai.yaml`: Optional UI metadata for compatible platforms.
+
+## 中文
+
+Silicon Valley Daily 是一个可跨平台安装的 agent skill package，用来生成「硅谷每天发生了什么」日报。它覆盖硅谷、湾区科技公司、AI 实验室、创业公司、VC、大厂平台、政策安全和湾区本地生态信号。
+
+这个 package 会先让用户选择关注范围，再检索、核验、去重、排序，并输出带来源的中文、英文或中英双语简报。
+
+### 跨平台说明
+
+这个仓库面向支持 skill-style instruction folder 的 agent 平台。
+
+核心安装对象是 `silicon-valley-daily/` 文件夹：
+
+- `SKILL.md`：触发描述和核心工作流。
+- `references/`：按需加载的信源策略、关注名单和报告模板。
+- `agents/openai.yaml`：可选 UI metadata。平台不支持时可以忽略。
+
+宿主平台需要提供网页搜索、浏览器访问、X/Twitter 访问，或其他实时新闻检索能力。没有实时检索能力时，agent 应该说明无法核验，而不是编造当天新闻。
+
+如果某个平台一次只能导入一个 skill 文件夹，请导入 `silicon-valley-daily/`，不要导入整个仓库。
+
+### 功能
+
+- 如果用户没有提前指定关注范围，先发起关注范围选择。
+- 生成带来源的硅谷和湾区科技日报。
+- 支持中文、英文和中英双语输出。
+- 支持全景版和聚焦版。
+- 区分已确认事实、低可信信号和未纳入噪音。
+- 内置可信信源栈和 X/Twitter 关注名单，用于发现线索。
+
+### 使用流程
+
+用户问：
 
 ```text
 硅谷今天发生了什么？
@@ -53,36 +220,18 @@ Agent 不会马上开始搜，而是先问：
 
 用户确认后，agent 再开始检索、核验和输出。
 
-### 2. 用户指定方向
+### 可选关注范围
 
-```text
-每天早上给我一份硅谷日报，我主要关注 AI 和创业融资。
-```
+- 全景版
+- AI 模型与基础设施
+- 创业公司、融资与并购
+- 大厂、平台与开发者生态
+- VC、孵化器与人才流动
+- 政策、诉讼与安全
+- 创始人和经营信号
+- 湾区本地生态、大学、活动与社区
 
-agent 会确认：
-
-```text
-好的，这次按「AI 模型与基础设施 + 创业融资与并购」来做。我会先核验来源，再按重要性排序输出。
-```
-
-然后优先覆盖用户选择的 1-2 个方向，并只保留其他类别里的重大事件。
-
-### 3. 用户选择全景版
-
-全景版不是混合新闻流，而是分领域输出。每个板块都要检查，有高信号就列新闻，没有就说明「今日无高信号」。
-
-### 4. 可选关注范围
-
-- Panorama / 全景版
-- AI models and infrastructure / AI 模型与基础设施
-- Startups, funding, and M&A / 创业公司、融资与并购
-- Big Tech and platforms / 大厂、平台与开发者生态
-- VC, accelerators, and talent flows / VC、孵化器与人才流动
-- Policy, litigation, and security / 政策、诉讼与安全
-- Founder/operator signals / 创始人和经营信号
-- Local Bay Area ecosystem / 湾区本地生态、大学、活动与社区
-
-## Example Prompts
+### 示例 prompt
 
 ```text
 硅谷今天发生了什么？
@@ -97,45 +246,37 @@ agent 会确认：
 ```
 
 ```text
-Use Silicon Valley Daily for a bilingual founder/investor brief on Silicon Valley today.
+使用 Silicon Valley Daily，做一份今天的创始人/投资人版中英双语硅谷日报。
 ```
 
-If your platform supports explicit skill tags, this also works:
+如果平台支持显式 skill tag，也可以：
 
 ```text
 Use $silicon-valley-daily to brief me on what happened in Silicon Valley today in Chinese.
 ```
 
-## Output Format Example
+### 输出样式
 
-The example below shows the format only. Real briefs must be generated with live sources.
+全景版不是混合新闻流，而是分领域输出：
 
 ```markdown
 # 硅谷今天发生了什么
 
-报告窗口：2026-06-01 08:00 至 2026-06-01 18:00（Asia/Shanghai）；对应 Pacific Time：2026-05-31 17:00 至 2026-06-01 03:00
-覆盖范围：硅谷、湾区科技公司、AI/创业/VC，以及影响硅谷生态的美国科技事件
+报告窗口：...
 本次关注范围：全景版
 
 ## 一句话总览
 
-今天最重要的变化是：AI 基础设施、平台政策和创业融资仍在互相影响，创始人需要同时看技术供给、分发入口和资本信号。
+...
 
 ## 最值得看的 5 件事
 
-1. **某 AI 平台发布新的开发者能力**
-   发生了什么：公司发布了新的 API、模型或工具链更新。
-   为什么重要：这可能改变开发者构建 AI 应用的成本结构和产品边界。
-   影响对象：开发者 / AI 创业公司 / 企业客户
-   可信度：高
-   来源：[Company Blog](https://example.com)
-
-2. **某湾区创业公司完成新一轮融资**
-   发生了什么：公司宣布融资金额、轮次和主要投资方。
-   为什么重要：说明资本仍在流向具备明确商业化路径的细分方向。
-   影响对象：创始人 / 投资人
-   可信度：高
-   来源：[Funding Announcement](https://example.com)
+1. **标题**
+   发生了什么：...
+   为什么重要：...
+   影响对象：创始人 / 投资人 / 开发者 / 大厂 / 用户
+   可信度：高 / 中 / 低
+   来源：[Source](https://example.com)
 
 ## 分领域简报
 
@@ -169,20 +310,18 @@ The example below shows the format only. Real briefs must be generated with live
 
 ## 接下来值得盯的信号
 
-- 是否有开发者从旧平台迁移到新工具链。
-- 新融资公司是否能披露真实客户、收入或使用量。
-- 大厂平台政策是否改变创业公司的分发和成本结构。
+- ...
 
 ## 信源说明
 
-- 已核验来源：公司公告、监管/备案文件、可信媒体报道。
-- 低可信或未纳入事项：未被一手来源或可信媒体确认的社交媒体爆料。
+- 已核验来源：...
+- 低可信或未纳入事项：...
 ```
 
-## Package Files
+### 文件结构
 
-- `silicon-valley-daily/SKILL.md`: Trigger description and core workflow.
-- `silicon-valley-daily/references/source-strategy.md`: Source tiers, focus taxonomy, and ranking rules.
-- `silicon-valley-daily/references/watchlist.md`: Built-in source stack, daily research methods, and X/Twitter watchlist.
-- `silicon-valley-daily/references/report-formats.md`: Chinese, English, and bilingual report templates.
-- `silicon-valley-daily/agents/openai.yaml`: Optional UI metadata for compatible platforms.
+- `silicon-valley-daily/SKILL.md`：触发描述和核心工作流。
+- `silicon-valley-daily/references/source-strategy.md`：信源分层、关注分类和排序规则。
+- `silicon-valley-daily/references/watchlist.md`：内置信源栈、每日检索方法和 X/Twitter 关注名单。
+- `silicon-valley-daily/references/report-formats.md`：中文、英文和中英双语报告模板。
+- `silicon-valley-daily/agents/openai.yaml`：兼容平台可用的可选 UI metadata。
